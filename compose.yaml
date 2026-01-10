@@ -1,0 +1,24 @@
+services:
+  app:
+    image: analytics_api:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    environment:
+      - PORT=8000
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src:/code:rw
+    develop:
+      watch:
+        - action: rebuild
+          path: Dockerfile.web
+        - action: rebuild
+          path: requirements.txt
+        - action: rebuild
+          path: compose.yaml
+

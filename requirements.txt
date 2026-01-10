@@ -1,0 +1,7 @@
+fastapi==0.128.0
+uvicorn==0.40.0
+gunicorn==23.0.0
+sqlmodel==0.0.31
+pydantic==2.12.5
+sqlalchemy==2.0.45
+timescaledb==0.0.4
