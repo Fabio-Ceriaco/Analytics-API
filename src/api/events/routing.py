@@ -16,7 +16,7 @@ def read_events() -> EventListSchema:
 @router.post("/")
 def create_event(data: dict = {}) -> EventSchema:
     # a bunch of items in a table
-    print(data)
+    print(type(data))
     return {"id": 123}
 
 
@@ -24,3 +24,15 @@ def create_event(data: dict = {}) -> EventSchema:
 def get_event(event_id: int) -> EventSchema:
     # single row
     return {"id": event_id}
+
+
+@router.put("/{event_id}")
+def get_event(event_id: int, payload: dict = {}) -> EventSchema:
+    # single row
+    return {"id": event_id}
+
+
+# # @router.delete("/{event_id}")
+# def get_event(event_id: int, payload: dict = {}) -> EventSchema:
+#     # single row
+#     return {"id": event_id}
