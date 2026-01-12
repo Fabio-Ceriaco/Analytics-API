@@ -5,3 +5,6 @@ sqlmodel==0.0.31
 pydantic==2.12.5
 sqlalchemy==2.0.45
 timescaledb==0.0.4
+requests==2.31.0
+python-decouple>=3.8
+psycopg[binary]==3.3.2
